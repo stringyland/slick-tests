@@ -1,0 +1,13 @@
+.wrapper {
+  min-width: 80%;
+  margin: 2em auto;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.menu ol {
+  width: 50%;
+  margin: 0 auto;
+}
