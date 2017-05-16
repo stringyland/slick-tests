@@ -39,24 +39,24 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Center Mode</h2>
-    <section class="regular slider">
+    <section class="centered slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <img src="http://placehold.it/350x300?text=1" alt="First slide is an image, but it might not be the first slide presented because we are using a centered style">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" alt="A second image in this slider">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <p>Third slide is a paragraph with a <a href="www.google.com">link to Google</a> in it. Will the link take focus when it is not visible? Let's find out.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" alt="This is the fourth slide">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" alt="This centered display would work best on content that doesn't need to begin at a specific slide">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" alt="The last slide is also an image">
       </div>
     </section>
 
@@ -84,11 +84,11 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".centered").slick({
           dots: true,
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          centerMode: true,
+          centerPadding: '60px',
+          slidesToShow: 3
         });
       });
     </script>
