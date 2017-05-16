@@ -39,24 +39,24 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Fade</h2>
-    <section class="regular slider">
+    <section class="fade slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <img src="http://placehold.it/350x300?text=1" height="300" alt="First image should display as usual, but just one image is shown at a time in this version">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" height="300" alt="The second image, and all the others, should appear with a fade-in effect as the previous image fades out">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <img src="http://placehold.it/350x300?text=3" height="300" alt="This is the third image">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" height="300" alt="Fourth image is right here now">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" height="300" alt="Nearly at the end with the fifth image">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" height="300" alt="Last image is the sixth image">
       </div>
     </section>
 
@@ -84,11 +84,12 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".fade").slick({
           dots: true,
           infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          speed: 500,
+          fade: true,
+          cssEase: 'linear'
         });
       });
     </script>
