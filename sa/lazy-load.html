@@ -39,24 +39,24 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Lazy Loading</h2>
-    <section class="regular slider">
+    <section class="lazy slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <img src="http://placehold.it/350x300?text=1" alt="First slide is an image, and was loaded by the browser at the same time as the rest of the page. The others will not be loaded until the user clicks the navigation">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img data-lazy="http://placehold.it/350x300?text=2" alt="This second slide, and the other images, were not loaded by the browser until the arrow or dot navigation was used to make it appear">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <p>This third slide is a paragraph, so it will always be announced by a screenreader. But will the lazy loaded images be announced? They have alt descriptions, but no source attribute in the HTML.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img data-lazy="http://placehold.it/350x300?text=4" alt="Will a screenreader announce this fourth image if it has been lazy loaded, or will it be ignored?">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img data-lazy="http://placehold.it/350x300?text=5" alt="Lazy loading saves data because if the user doesn't want to look at the fifth image they won't have to download it">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img data-lazy="http://placehold.it/350x300?text=6" alt="The last slide is also an image">
       </div>
     </section>
 
@@ -84,11 +84,11 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".lazy").slick({
           dots: true,
-          infinite: true,
+          lazyLoad: 'ondemand',
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 1
         });
       });
     </script>
