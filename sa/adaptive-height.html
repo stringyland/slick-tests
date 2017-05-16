@@ -39,24 +39,26 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Adaptive Height</h2>
-    <section class="regular slider">
+    <section class="adaptive slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <p style="height: 300px;">This slider has slides with different heights. It should adjust the height of the whole slider widget for each new slide.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" alt="Second slide is an image plus some text" width="100">
+        <p>Here is some text to go with the image.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <p style="height: 200px;">Third slide is a paragraph with a <a href="www.google.com">link to Google</a> in it. Will the link take focus when it is not visible? Let's find out.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" alt="Fourth slide is an image which is 250 pixels tall" height="250">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" alt="The image for the fifth slide is only 50 pixels tall" height="50">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" alt="The last slide is also an image with text. The image is just 150 pixels tall" height="150">
+        <p>This is the last bit of text in this slider.</p>
       </div>
     </section>
 
@@ -84,11 +86,11 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".adaptive").slick({
           dots: true,
           infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToShow: 1,
+          adaptiveHeight: true
         });
       });
     </script>
