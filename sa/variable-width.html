@@ -26,7 +26,7 @@
     }
 
     .slick-slide img {
-      width: 100%;
+      /*width: 100%;*/
     }
 
     .slick-prev:before,
@@ -39,24 +39,24 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Variable Width</h2>
-    <section class="regular slider">
+    <section class="variable slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <p style="width: 300px;">This slider has slides with different widths. It should adjust the display to show one slide in the middle of the slider area, with others partially displayed to its left and right.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" alt="Second slide is an image" width="100">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <p style="width: 300px;">Third slide is a paragraph with a <a href="www.google.com">link to Google</a> in it. Will the link take focus when it is not visible? Let's find out.</p>
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" alt="Fourth slide is an image" width="200">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" alt="Fifth slide is an image" width="300">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" alt="And just for consistency, the last slide is also an image" width="150">
       </div>
     </section>
 
@@ -84,11 +84,13 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".variable").slick({
           dots: true,
           infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          speed: 300,
+          slidesToShow: 1,
+          centerMode: true,
+          variableWidth: true
         });
       });
     </script>
