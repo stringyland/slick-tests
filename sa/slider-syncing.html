@@ -39,24 +39,46 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Slider Syncing</h2>
-    <section class="regular slider">
+    <p class="advice">Two sliders. The first shows one large image at a time, and has no controls for the user. <br>The second shows small versions of the images. It can be controlled by the user. <br>Changing the slide on the second carousel will update the first carousel, making it show the large version of the new small slide.</p>
+    <section class="sync-large slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <img src="http://placehold.it/350x300?text=1" alt="Large Image 1" height="200">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" alt="Large Image 2" height="200">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <img src="http://placehold.it/350x300?text=3" alt="Large Image 3" height="200">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" alt="Large Image 4" height="200">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" alt="Large Image 5" height="200">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" alt="Large Image 6" height="200">
+      </div>
+    </section>
+
+    <section class="sync-small slider">
+      <div>
+        <img src="http://placehold.it/350x300?text=1" alt="Small Image 1">
+      </div>
+      <div>
+        <img src="http://placehold.it/350x300?text=2" alt="Small Image 2">
+      </div>
+      <div>
+        <img src="http://placehold.it/350x300?text=3" alt="Small Image 3">
+      </div>
+      <div>
+        <img src="http://placehold.it/350x300?text=4" alt="Small Image 4">
+      </div>
+      <div>
+        <img src="http://placehold.it/350x300?text=5" alt="Small Image 5">
+      </div>
+      <div>
+        <img src="http://placehold.it/350x300?text=6" alt="Small Image 6">
       </div>
     </section>
 
@@ -82,11 +104,21 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
-          dots: true,
-          infinite: true,
+        $(".sync-large").slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.sync-small'
+        });
+
+        $('.sync-small').slick({
           slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToScroll: 1,
+          asNavFor: '.sync-large',
+          dots: true,
+          centerMode: true,
+          focusOnSelect: true
         });
       });
     </script>
