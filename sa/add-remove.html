@@ -39,26 +39,16 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Add and Remove</h2>
-    <section class="regular slider">
+    <p class="advice">Code for this does not work as supplied on author's site.</p>
+    <section class="add-remove slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
-      </div>
-      <div>
-        <img src="http://placehold.it/350x300?text=2">
-      </div>
-      <div>
-        <img src="http://placehold.it/350x300?text=3">
-      </div>
-      <div>
-        <img src="http://placehold.it/350x300?text=4">
-      </div>
-      <div>
-        <img src="http://placehold.it/350x300?text=5">
-      </div>
-      <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=1" alt="First image, which will be the only image until you click the Add Slide button">
       </div>
     </section>
+    <div class="buttons">
+      <a class="button js-add-slide" href="javascript:void(0)">Add Slide</a>
+      <a class="button js-remove-slide" href="javascript:void(0)">Remove Slide</a>
+    </div>
 
     <nav class="menu">
       <ol>
@@ -72,7 +62,6 @@
         <li><a href="lazy-load.html">Lazy Loading</a></li>
         <li><a href="autoplay.html">Autoplay</a></li>
         <li><a href="fade.html">Fade</a></li>
-        <li><a href="add-remove.html">Add and Remove</a></li>
         <li><a href="filter.html">Filtering</a></li>
         <li><a href="destroy.html">Destroy</a></li>
         <li><a href="slider-syncing.html">Slider Syncing</a></li>
@@ -84,12 +73,27 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
-          dots: true,
-          infinite: true,
+        $('.add-remove').slick({
           slidesToShow: 3,
           slidesToScroll: 3
         });
+
+        $('.js-add-slide').on('click', function() {
+          var slideIndex = $("img.slick-active").attr("data-slick-index");
+          slideIndex++;
+          $('.add-remove').slick('slickAdd','<div><h3>' + slideIndex + '</h3></div>');
+        });
+
+        $('.js-remove-slide').on('click', function() {
+          i = $("img.slick-active").attr("data-slick-index");
+          $('.add-remove').slick('slickRemove', i);
+          var j = 0;
+          $("img.slick-slide").each(function(){
+            $(this).attr("data-slick-index",j);
+            j++;
+          });
+        });
+
       });
     </script>
   </div><!--end wrapper -->

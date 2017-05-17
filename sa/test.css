@@ -3,7 +3,7 @@
   margin: 2em auto;
 }
 
-h1, h2, p.advice {
+h1, h2, p.advice, .buttons {
   text-align: center;
 }
 
