@@ -39,26 +39,29 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Filter</h2>
-    <section class="regular slider">
+    <section class="filtering slider">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <img src="http://placehold.it/350x300?text=1" alt="First">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" alt="Second image">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <img src="http://placehold.it/350x300?text=3" alt="Third image">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" alt="Fourth image">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" alt="Fifth image">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" alt="Sixth and final image">
       </div>
     </section>
+
+
+    <p class="advice"><a class="button js-filter" href="javascript:void(0)">Filter Out Even-numbered Slides</a></p>
 
     <nav class="menu">
       <ol>
@@ -72,7 +75,7 @@
         <li><a href="lazy-load.html">Lazy Loading</a></li>
         <li><a href="autoplay.html">Autoplay</a></li>
         <li><a href="fade.html">Fade</a></li>
-         
+
         <li>Filtering</li>
         <li><a href="destroy.html">Destroy</a></li>
         <li><a href="slider-syncing.html">Slider Syncing</a></li>
@@ -84,12 +87,26 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".filtering").slick({
           dots: true,
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToShow: 2,
+          slidesToScroll: 2
         });
+
+        var filtered = false;
+
+        $('.js-filter').on('click', function(){
+          if (filtered === false) {
+            $('.filtering').slick('slickFilter',':even');
+            $(this).text('Unfilter Slides');
+            filtered = true;
+          } else {
+            $('.filtering').slick('slickUnfilter');
+            $(this).text('Filter Out Even-numbered Slides');
+            filtered = false;
+          }
+        });
+
       });
     </script>
   </div><!--end wrapper -->
