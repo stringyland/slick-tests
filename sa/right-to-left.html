@@ -39,24 +39,24 @@
   <div class="wrapper">
     <h1>Carousel Test Pages</h1>
     <h2>Right to Left</h2>
-    <section class="regular slider">
+    <section class="rtl slider" dir="rtl">
       <div>
-        <img src="http://placehold.it/350x300?text=1">
+        <img src="http://placehold.it/350x300?text=1" height="300" alt="Slide 1 in a right-to-left slider">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=2">
+        <img src="http://placehold.it/350x300?text=2" height="300" alt="Slide 2 for languages that are read from right to left">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=3">
+        <img src="http://placehold.it/350x300?text=3" height="300" alt="Slide 3 Arabic, Hebrew and Urdu are read from right to left">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=4">
+        <img src="http://placehold.it/350x300?text=4" height="300" alt="Slide 4">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=5">
+        <img src="http://placehold.it/350x300?text=5" height="300" alt="Slide 5">
       </div>
       <div>
-        <img src="http://placehold.it/350x300?text=6">
+        <img src="http://placehold.it/350x300?text=6" height="300" alt="Slide 6">
       </div>
     </section>
 
@@ -82,11 +82,9 @@
     <script src="../slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).on('ready', function() {
-        $(".regular").slick({
+        $(".rtl").slick({
           dots: true,
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 3
+          rtl: true
         });
       });
     </script>
